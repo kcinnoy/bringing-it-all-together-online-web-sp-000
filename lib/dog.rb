@@ -30,7 +30,7 @@ class Dog
       breed: row[2]
     }
 
-    self.new(attributes_hash) 
+    self.new(attributes_hash)
   end
 
   def self.find_by_name(name)
@@ -53,7 +53,7 @@ class Dog
 
   def save
     sql = <<-SQL
-      INSERT INTO dogs (name, breed) VALUES (?, ?) 
+      INSERT INTO dogs (name, breed) VALUES (?, ?)
     SQL
 
     DB[:conn].execute(sql, self.name, self.breed)
@@ -64,7 +64,7 @@ class Dog
 
   def self.find_by_id(id)
     sql = <<-SQL
-      SELECT * FROM dogs 
+      SELECT * FROM dogs
       WHERE id = ?
     SQL
 
